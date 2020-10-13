@@ -147,10 +147,6 @@ const attendance = {
     }
 }
 
-app.get('/', function(req, res){ 
-    res.render('pdf.ejs',{reports:attendance,moment:moment}) 
-  });
-
 app.get("/generateReport", (req, res) => {
     ejs.renderFile(path.join(__dirname, './views/', "pdf.ejs"), {reports: attendance,moment:moment}, (err, data) => {
     if (err) {
