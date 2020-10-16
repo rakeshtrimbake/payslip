@@ -146,14 +146,14 @@ const attendance = {
         }
     }
 }
-
+    console.log(__dirname);
 app.get("/generateReport", (req, res) => {
     ejs.renderFile(path.join(__dirname, './views/', "pdf.ejs"), {reports: attendance,moment:moment}, (err, data) => {
     if (err) {
         console.log(err);
           res.send(err);
     } else {
-       
+       console.log(data);
         let options = {
             "height": "11.25in",
             "width": "8.5in",

@@ -256,7 +256,11 @@
           <tr class="header__monthly">
             <td align="center" width="30%"><%=report.date%></td>
             <td align="center" width="30%"><%=report.hours_worked%></td>
-            <td align="center" width="40%"><span><%=report.attendance_type%></span> </td>
+            <% if(report.attendance_type  == "Absent"){ %>
+            <td align="center" width="40%"><span style="color: red !important;"><%=report.attendance_type%></span></td>
+            <% }else{ %>
+              <td align="center" width="40%"><span style="color: green !important;"><%=report.attendance_type%></span></td>
+              <% } %>
           </tr>
           <% });%>
       </table>
